@@ -1,0 +1,68 @@
+
+/ {
+    /* 1. 定義別名，讓 C 程式碼找到 sw1 */
+    aliases {
+        sw1 = &blue_button;  /* 按鈕命名 */
+        accel0 = &adxl345;
+        lcd0 = &lcd1602;
+    };
+
+    /* 2. 定義按鈕硬體資訊 */
+    buttons {
+        compatible = "gpio-keys";
+        blue_button: button_0 {
+            /* PC13 是 B-L4S5I-IOT01A 的 User Button 腳位 */
+            gpios = <&gpioc 13 GPIO_ACTIVE_LOW>;
+            label = "User Button";
+        };
+    };
+};
+
+
+
+/ {
+	/* 統一寫在一個 aliases 區塊 */
+	aliases {
+		led0 = &green_led_2; /* 對應開發板原本的綠燈 */
+		led1 = &pe3_led;     /* 對應你新增的 PE3 LED */
+	};
+
+	leds {
+		compatible = "gpio-leds";
+		pe3_led: pe3_led {
+			gpios = <&gpioe 3 GPIO_ACTIVE_HIGH>;
+			label = "PE3 LED";
+		}; 
+	};
+};
+
+
+/*定義LCD相關的I2C*/
+&i2c1 {
+    status = "okay";
+    clock-frequency = <100000>;
+
+    lcd1602: lcd@27 {
+        compatible = "hit,pcf8574";  // PCF8574 是 I2C I/O 擴展器
+        reg = <0x27>;                // 常見的 LCD I2C 位址 (可用 i2cdetect 掃描)
+        status = "okay";
+    };
+};
+
+/*定義感測器相關的I2C*/
+&i2c3 {
+    status = "okay";
+    clock-frequency = <100000>;
+    
+    /* 設定引腳為 PC0 和 PC1 */
+    pinctrl-0 = <&i2c3_scl_pc0 &i2c3_sda_pc1>;
+    pinctrl-names = "default";
+
+    adxl345: adxl345@53 {
+        compatible = "adi,adxl345";
+        reg = <0x53>;
+        status = "okay";
+    };
+};
+
+

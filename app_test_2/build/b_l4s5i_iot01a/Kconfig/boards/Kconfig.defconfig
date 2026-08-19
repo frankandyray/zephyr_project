@@ -1,0 +1,2 @@
+# Load Zephyr board defconfig descriptions.
+osource "C:/Users/ray45/zephyrproject/zephyr/boards/st/b_l4s5i_iot01a/Kconfig.defconfig"

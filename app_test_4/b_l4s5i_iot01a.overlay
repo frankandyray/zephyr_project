@@ -1,0 +1,25 @@
+/ {
+	/* 統一寫在一個 aliases 區塊 */
+	aliases {
+		led0 = &green_led_2; /* 對應開發板原本的綠燈 */
+		led1 = &pe3_led;     /* 對應你新增的 PE3 LED */
+	};
+
+	leds {
+		compatible = "gpio-leds";
+		pe3_led: pe3_led {
+			gpios = <&gpioe 3 GPIO_ACTIVE_HIGH>;
+			label = "PE3 LED";
+		}; 
+	};
+};
+
+&i2c1 {
+	status = "okay";
+	clock-frequency = <100000>;
+	lcd1602: lcd@27 {
+		compatible = "hit,pcf8574";
+		reg = <0x27>; /* 對應 cs-gpios 的第 0 個索引 */
+		status = "okay";
+	};
+};

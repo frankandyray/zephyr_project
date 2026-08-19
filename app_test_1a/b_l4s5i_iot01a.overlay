@@ -1,0 +1,19 @@
+/*led0已經預設與命名了，led2已經預設但還沒命名*/
+
+/ {
+aliases {
+
+		led1 = &green_led_2;    //led1命名
+		led2 = &pe3_led;        //led2命名
+	};
+
+ leds {
+        /*led2設定*/
+        compatible = "gpio-leds";
+
+        pe3_led: pe3_led {
+            gpios = <&gpioe 3 GPIO_ACTIVE_HIGH>;
+            label = "PE3 LED";
+        };
+    };
+    };

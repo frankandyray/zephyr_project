@@ -1,0 +1,7 @@
+west:
+  command: c:\Users\ray45\zephyrproject\.venv\Scripts\west build -b b_l4s5i_iot01a
+    c:/Users/ray45/zephyrproject/zephyr/samples/basic/app_test_2 -p --build-dir c:/Users/ray45/zephyrproject/zephyr/samples/basic/app_test_2/build/b_l4s5i_iot01a
+    -- -DBOARD_ROOT=C:\Users\ray45\zephyrproject\zephyr -DCONFIG_DEBUG_OPTIMIZATIONS=y
+    -DCONFIG_DEBUG_THREAD_INFO=y
+  topdir: c:\Users\ray45\zephyrproject
+  version: 1.5.0

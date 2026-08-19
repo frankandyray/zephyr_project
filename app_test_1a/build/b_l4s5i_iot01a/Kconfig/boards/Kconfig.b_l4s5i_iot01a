@@ -1,0 +1,2 @@
+# Load board Kconfig descriptions.
+osource "C:/Users/user/zephyrproject/zephyr/boards/st/b_l4s5i_iot01a/Kconfig.b_l4s5i_iot01a"
