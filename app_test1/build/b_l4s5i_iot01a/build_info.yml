@@ -1,0 +1,62 @@
+cmake:
+  application:
+    configuration-dir: 'C:/Users/ray45/zephyrproject/zephyr/samples/basic/app_test1'
+    source-dir: 'C:/Users/ray45/zephyrproject/zephyr/samples/basic/app_test1'
+  board:
+    name: 'b_l4s5i_iot01a'
+    path:
+     - 'C:/Users/ray45/zephyrproject/zephyr/boards/st/b_l4s5i_iot01a'
+    qualifiers: 'stm32l4s5xx'
+    revision: ''
+  devicetree:
+    bindings-dirs:
+     - 'C:/Users/ray45/zephyrproject/zephyr/dts/bindings'
+    files:
+     - 'C:/Users/ray45/zephyrproject/zephyr/boards/st/b_l4s5i_iot01a/b_l4s5i_iot01a.dts'
+     - 'C:/Users/ray45/zephyrproject/zephyr/samples/basic/app_test1/b_l4s5i_iot01a.overlay'
+    include-dirs:
+     - 'C:/Users/ray45/zephyrproject/modules/hal/ambiq/dts'
+     - 'C:/Users/ray45/zephyrproject/modules/hal/atmel/include'
+     - 'C:/Users/ray45/zephyrproject/modules/hal/bouffalolab/include'
+     - 'C:/Users/ray45/zephyrproject/modules/hal/bouffalolab/include/zephyr'
+     - 'C:/Users/ray45/zephyrproject/modules/hal/gigadevice/include'
+     - 'C:/Users/ray45/zephyrproject/modules/hal/microchip/include'
+     - 'C:/Users/ray45/zephyrproject/modules/hal/microchip/dts'
+     - 'C:/Users/ray45/zephyrproject/modules/hal/nuvoton/dts'
+     - 'C:/Users/ray45/zephyrproject/modules/hal/nxp/dts'
+     - 'C:/Users/ray45/zephyrproject/modules/hal/stm32/dts'
+     - 'C:/Users/ray45/zephyrproject/modules/hal/ti/dts'
+     - 'C:/Users/ray45/zephyrproject/zephyr/include'
+     - 'C:/Users/ray45/zephyrproject/zephyr/include/zephyr'
+     - 'C:/Users/ray45/zephyrproject/zephyr/dts/common'
+     - 'C:/Users/ray45/zephyrproject/zephyr/dts/vendor'
+     - 'C:/Users/ray45/zephyrproject/zephyr/dts/rx'
+     - 'C:/Users/ray45/zephyrproject/zephyr/dts/x86'
+     - 'C:/Users/ray45/zephyrproject/zephyr/dts/xtensa'
+     - 'C:/Users/ray45/zephyrproject/zephyr/dts/sparc'
+     - 'C:/Users/ray45/zephyrproject/zephyr/dts/riscv'
+     - 'C:/Users/ray45/zephyrproject/zephyr/dts/posix'
+     - 'C:/Users/ray45/zephyrproject/zephyr/dts/arm64'
+     - 'C:/Users/ray45/zephyrproject/zephyr/dts/arm'
+     - 'C:/Users/ray45/zephyrproject/zephyr/dts/arc'
+     - 'C:/Users/ray45/zephyrproject/zephyr/dts'
+    user-files:
+     - 'C:/Users/ray45/zephyrproject/zephyr/samples/basic/app_test1/b_l4s5i_iot01a.overlay'
+  kconfig:
+    files:
+     - 'C:/Users/ray45/zephyrproject/zephyr/boards/st/b_l4s5i_iot01a/b_l4s5i_iot01a_defconfig'
+     - 'C:/Users/ray45/zephyrproject/zephyr/samples/basic/app_test1/prj.conf'
+     - 'C:/Users/ray45/zephyrproject/zephyr/samples/basic/app_test1/build/b_l4s5i_iot01a/zephyr/misc/generated/extra_kconfig_options.conf'
+    user-files:
+     - 'C:/Users/ray45/zephyrproject/zephyr/samples/basic/app_test1/prj.conf'
+  toolchain:
+    name: 'zephyr'
+    path: 'C:/Users/ray45/zephyr-sdk-0.17.4'
+  zephyr:
+    version: '4.3.99'
+    zephyr-base: 'C:/Users/ray45/zephyrproject/zephyr'
+version: '0.1.0'
+west:
+  command: 'c:\Users\ray45\zephyrproject\.venv\Scripts\west build -b b_l4s5i_iot01a c:/Users/ray45/zephyrproject/zephyr/samples/basic/app_test1 -p --build-dir c:/Users/ray45/zephyrproject/zephyr/samples/basic/app_test1/build/b_l4s5i_iot01a -- -DBOARD_ROOT=C:\Users\ray45\zephyrproject\zephyr -DCONFIG_DEBUG_OPTIMIZATIONS=y -DCONFIG_DEBUG_THREAD_INFO=y'
+  topdir: 'c:\Users\ray45\zephyrproject'
+  version: '1.5.0'

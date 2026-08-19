@@ -1,0 +1,33 @@
+/* app.overlay */
+
+/*按鈕sw0已經預設與命名*/
+
+/ {
+	aliases {
+		led1 = &green_led_2;
+		led2 = &pe3_led;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+
+		pe3_led: pe3_led {
+			gpios = <&gpioe 3 GPIO_ACTIVE_HIGH>;
+			label = "PE3 LED";
+		};
+	};
+};
+
+&spi1 {
+	status = "okay";
+
+	/* 如果你的板子原本沒有幫 spi1 定義 cs-gpios，就要自己補上 */
+	/* 下面這行的 GPIO 腳位請依你的實際接線修改 */
+	/* cs-gpios = <&gpioa 4 GPIO_ACTIVE_LOW>; */
+
+	adxl345: adxl345@0 {
+		compatible = "adi,adxl345";
+		reg = <0>;
+		spi-max-frequency = <5000000>;
+	};
+};
